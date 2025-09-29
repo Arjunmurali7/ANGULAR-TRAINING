@@ -1,0 +1,27 @@
+
+<div class="user-container">
+  <h2>User List</h2>
+  <p>This data is fetched live from the JSONPlaceholder API.</p>
+
+  
+  <table>
+    
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+   
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

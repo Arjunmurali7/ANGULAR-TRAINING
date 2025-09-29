@@ -1,0 +1,7 @@
+<h1 class="center-heading">Product List</h1>
+<div *ngFor="let product of products"
+     [ngClass]="{ 'expensive': isExpensive(product.price), 'cheap': !isExpensive(product.price) }"
+     class="product-item">
+  <h3>{{ product.name }}</h3>
+  <p>Price: {{ product.price | currency:'INR':'symbol' }}</p>
+</div>  

@@ -1,0 +1,17 @@
+
+
+<div class="student-container"> 
+  
+  <h2>Student Roster</h2>
+  <p>Data provided by the StudentService.</p>
+
+  <ul>
+  
+    <li *ngFor="let student of students">
+      <div class="student-info">
+        <span class="student-name">{{ student.name }}</span>
+        <span class="student-major">{{ student.major }}</span>
+      </div>
+    </li>
+  </ul>
+</div>

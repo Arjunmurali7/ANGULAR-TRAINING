@@ -1,0 +1,44 @@
+.center-heading {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 20px 0;
+  color: #333;
+}
+
+.product-item {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 15px auto;
+  width: 60%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.product-item h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #0077cc;
+}
+
+.product-item p {
+  font-size: 1.1rem;
+  margin-top: 8px;
+}
+
+/* Conditional styling */
+.expensive {
+  border-left: 6px solid #e74c3c; /* red for expensive */
+  background-color: #fff5f5;
+}
+
+.cheap {
+  border-left: 6px solid #2ecc71; /* green for cheap */
+  background-color: #f6fff6;
+}

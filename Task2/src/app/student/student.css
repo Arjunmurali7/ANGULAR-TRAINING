@@ -1,0 +1,41 @@
+
+.student-card {
+  max-width: 350px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: whitesmoke;
+  box-shadow: 0 4px 10px gray;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+/* Heading */
+.student-card h2 {
+  color: navy;
+  margin-bottom: 15px;
+}
+
+/* Paragraph */
+.student-card p {
+  font-size: 16px;
+  margin: 5px 0;
+  color: darkslategray;
+}
+
+/* Button */
+.student-card button {
+  background-color: dodgerblue;
+  border: none;
+  color: white;
+  padding: 10px 18px;
+  margin-top: 15px;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.student-card button:hover {
+  background-color: royalblue;
+}
