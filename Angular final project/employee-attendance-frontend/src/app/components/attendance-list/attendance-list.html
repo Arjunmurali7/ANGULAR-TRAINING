@@ -1,0 +1,66 @@
+<div class="container">
+  <!-- Main Heading -->
+  <h1 class="main-title">Employee Attendance System</h1>
+
+  <!-- Search & Add -->
+  <div class="top-actions">
+    <div class="search-box">
+      <input type="text" [(ngModel)]="searchEmployeeId" placeholder="Search by Employee ID">
+      <button class="btn reset-btn" (click)="search()">Search</button>
+      <button class="btn reset-btn" (click)="loadAttendances()">Reset</button>
+    </div>
+    <button class="btn add-btn" (click)="showAddForm = !showAddForm">
+      {{ showAddForm ? 'Cancel' : 'Add Attendance' }}
+    </button>
+  </div>
+
+  <!-- Add/Edit Form -->
+  <div *ngIf="showAddForm" class="card form-card">
+    <h3 class="form-title">{{ editMode ? 'Edit Attendance Record' : 'Add Attendance Record' }}</h3>
+    <div class="form-grid">
+      <input type="text" placeholder="Employee Name" [(ngModel)]="attendanceForm.employeeName">
+      <input type="text" placeholder="Employee ID" [(ngModel)]="attendanceForm.employeeId">
+      <input type="date" [(ngModel)]="attendanceForm.date">
+      <select [(ngModel)]="attendanceForm.status">
+        <option value="Present">Present</option>
+        <option value="Absent">Absent</option>
+        <option value="Leave">Leave</option>
+      </select>
+    </div>
+    <button class="btn add-btn" (click)="saveAttendance()">{{ editMode ? 'Update' : 'Add' }}</button>
+  </div>
+
+  <!-- Attendance Table -->
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Employee Name</th>
+          <th>Employee ID</th>
+          <th>Date</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let record of attendances">
+          <td>{{ record.id }}</td>
+          <td>{{ record.employeeName }}</td>
+          <td>{{ record.employeeId }}</td>
+          <td>{{ record.date | date:'mediumDate' }}</td>
+          <td>
+            <span class="badge" 
+                  [ngClass]="{'present': record.status==='Present','absent': record.status==='Absent','leave': record.status==='Leave'}">
+              {{ record.status }}
+            </span>
+          </td>
+          <td>
+            <button class="btn edit-btn" (click)="editAttendance(record)">Edit</button>
+            <button class="btn delete-btn" (click)="deleteAttendance(record.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
